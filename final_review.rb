@@ -1,26 +1,70 @@
-puts "Please enter the names of the student and type done"
 names = []
-input_string = 0
-group_size = 2
+
 while true
-input_string = gets.chomp
-until answer == "done"
-  break
+  puts "type name and type done when finished"
+  name = gets.chomp
+  break if name == "done"
+  names << name
+end
+ 
+names.shuffle!
 
-names << input_string
-
+while names.any?
+  if names.length == 3
+    group = names.pop(3)
+      else
+        group = names.pop(2)
+    end
+  puts "Group: #{group.join(", ")}"
 end
 
-name_pairs = []
-
-while names.length > 0
-  group_size.times do |index_within_group|
-
-  sample_name_index = rand(names.length)
-
-name_groups[group_index][index_within_group]=\                 names[sample_name_index]
-
-if index_within_group = group.length -1
 
 
-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# people_in_class = []
+
+# puts "Please type each students name and when done type done"
+# while true
+#   person = gets.chomp 
+#   if person == "done"
+#     break
+#   end
+#   people_in_class << person
+# end
+
+# randomize = people_in_class.shuffle
+
+# num = 0
+
+# if randomize.length % 2 == 0
+#   while num < people_in_class.length 
+#     puts "Group #{randomize[num]} #{randomize[(num + 1)]}"
+#     num += 2
+#   end
+  
+# else
+#   while num < people_in_class.length
+#     if (people_in_class.length - num) == 3
+#       puts "Group #{randomize[num]} #{randomize[(num + 1)]} #{randomize[(num + 2)]}" 
+#       break
+#     else
+#       puts "Group #{randomize[num]} #{randomize[(num + 1)]}"
+#       num += 2
+#     end
+  
+#   end
+    
+# end
